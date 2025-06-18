@@ -14,7 +14,10 @@ function initColorScreen()
     local winColor = manageWindow()
 
     local btnBack = gui:image(winColor, "back.png",10, 20, 20, 20, color.white)
-    btnBack:onClick(initMainScreen)
+    btnBack:onClick(function ()
+        gui:setWindow(win)
+        gui:del(win2)
+    end)
 
     local title = gui:label(winColor, 40, 20, 280, 40)
     title:setText("Couleurs")
